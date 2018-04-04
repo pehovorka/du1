@@ -2,10 +2,9 @@ package com.github.pehovorka.du1.logika;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import java.util.Random;
 
-public class Hra extends Observable {
+public class Hra {
 	private boolean hraZacala = false;
 	private Integer skore;
 	private List<Slovo> slova;
@@ -33,26 +32,25 @@ public class Hra extends Observable {
 	public List<Slovo> getSlova() {
 		return slova;
 	}
-	
+
 	public void setSkore(Integer skore) {
 		this.skore = skore;
 	}
-	
+
 	public Integer getSkore() {
 		return skore;
 	}
-	
+
 	public boolean getHraZacala() {
 		return hraZacala;
 	}
-	
-	
-	public Slovo getNahodneSlovo () {
+
+	public Slovo getNahodneSlovo() {
 		nahodnyGenerator = new Random();
 		int index = nahodnyGenerator.nextInt(slova.size());
 		nahodneSlovo = slova.get(index);
 		hraZacala = true;
 		return nahodneSlovo;
 	}
-	
+
 }

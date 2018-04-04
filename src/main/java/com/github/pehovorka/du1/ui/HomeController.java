@@ -2,8 +2,6 @@ package com.github.pehovorka.du1.ui;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
 
 import com.github.pehovorka.du1.logika.Hra;
 import com.github.pehovorka.du1.logika.Slovo;
@@ -19,7 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-public class HomeController extends GridPane implements Observer {
+public class HomeController extends GridPane {
 
 	@FXML
 	private Button button1;
@@ -49,14 +47,14 @@ public class HomeController extends GridPane implements Observer {
 			Button stisknuteTlacitko = (Button) e.getSource();
 			System.out.println(stisknuteTlacitko.getId());
 			if (stisknuteTlacitko.getId().equals(nahodneSlovo.getAnglicky())) {
-				hra.setSkore(hra.getSkore()+1);
+				hra.setSkore(hra.getSkore() + 1);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Výsledek");
 				alert.setHeaderText("Správně");
 				alert.setContentText("Vybrali jste správný obrázek");
 				alert.showAndWait();
 			} else {
-				hra.setSkore(hra.getSkore()-1);
+				hra.setSkore(hra.getSkore() - 1);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Výsledek");
 				alert.setHeaderText("Špatně");
@@ -65,8 +63,8 @@ public class HomeController extends GridPane implements Observer {
 			}
 			labelSkore.setText(hra.getSkore().toString());
 			buttonHadejKlik();
-		} 
-		
+		}
+
 		else {
 			mainLabel.setText("Musíte začít hru stiskem na tlačítko hádej!");
 		}
@@ -141,10 +139,6 @@ public class HomeController extends GridPane implements Observer {
 		button6.setGraphic(image);
 		button6.setId(slova.get(5).getAnglicky());
 		button6.setTooltip(ceskyNazev);
-
-	}
-
-	public void update(Observable arg0, Object arg1) {
 
 	}
 }

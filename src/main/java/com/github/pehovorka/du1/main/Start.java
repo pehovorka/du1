@@ -9,18 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * Hello world!
- *
- */
-public final class Start extends Application 
-{
-    public static void main( String[] args )
-    {
-        launch(args);
-    }
-    
-    
+public final class Start extends Application {
+	public static void main(String[] args) {
+		launch(args);
+	}
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
@@ -39,5 +32,5 @@ public final class Start extends Application
 		primaryStage.setMaxWidth(1600);
 		primaryStage.setMaxHeight(1069);
 	}
-    
+
 }
