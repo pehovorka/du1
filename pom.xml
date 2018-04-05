@@ -40,7 +40,7 @@
     <archive>
       <manifest>
         <addClasspath>true</addClasspath>
-        <mainClass>com.github.pehovorka.utekZVezeni.main.Start</mainClass>
+        <mainClass>com.github.pehovorka.du1.main.Start</mainClass>
       </manifest>
     </archive>
   </configuration>
