@@ -47,21 +47,21 @@ public class HomeController extends GridPane {
 			Button stisknuteTlacitko = (Button) e.getSource();
 			System.out.println(stisknuteTlacitko.getId());
 			if (stisknuteTlacitko.getId().equals(nahodneSlovo.getAnglicky())) {
-				hra.setSkore(hra.getSkore() + 1);
+				hra.setSpravne(hra.getSpravne() + 1);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Výsledek");
 				alert.setHeaderText("Správně");
 				alert.setContentText("Vybrali jste správný obrázek");
 				alert.showAndWait();
 			} else {
-				hra.setSkore(hra.getSkore() - 1);
+				hra.setSpatne(hra.getSpatne() + 1);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Výsledek");
 				alert.setHeaderText("Špatně");
 				alert.setContentText("Vybrali jste špatný obrázek");
 				alert.showAndWait();
 			}
-			labelSkore.setText(hra.getSkore().toString());
+			labelSkore.setText("Správně: "+hra.getSpravne().toString()+"\nŠpatně: "+hra.getSpatne().toString());
 			buttonHadejKlik();
 		}
 

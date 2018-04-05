@@ -6,14 +6,16 @@ import java.util.Random;
 
 public class Hra {
 	private boolean hraZacala = false;
-	private Integer skore;
+	private Integer spravne;
+	private Integer spatne;
 	private List<Slovo> slova;
 	private Random nahodnyGenerator;
 	private Slovo nahodneSlovo;
 
 	public Hra() {
 		slova = new ArrayList<Slovo>();
-		skore = 0;
+		spravne = 0;
+		spatne = 0;
 		// Slova: car, tree, pen, rainbow, cat, dog
 		Slovo car = new Slovo("car", "auto", "/car.png");
 		Slovo tree = new Slovo("tree", "strom", "/tree.png");
@@ -33,12 +35,20 @@ public class Hra {
 		return slova;
 	}
 
-	public void setSkore(Integer skore) {
-		this.skore = skore;
+	public void setSpravne(Integer spravne) {
+		this.spravne = spravne;
 	}
 
-	public Integer getSkore() {
-		return skore;
+	public Integer getSpravne() {
+		return spravne;
+	}
+	
+	public void setSpatne(Integer spatne) {
+		this.spatne = spatne;
+	}
+
+	public Integer getSpatne() {
+		return spatne;
 	}
 
 	public boolean getHraZacala() {
