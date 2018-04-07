@@ -42,7 +42,7 @@ public class Hra {
 	public Integer getSpravne() {
 		return spravne;
 	}
-	
+
 	public void setSpatne(Integer spatne) {
 		this.spatne = spatne;
 	}

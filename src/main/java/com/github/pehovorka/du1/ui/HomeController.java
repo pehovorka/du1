@@ -45,28 +45,33 @@ public class HomeController extends GridPane {
 	public void hadej(ActionEvent e) {
 		if (hra.getHraZacala()) {
 			Button stisknuteTlacitko = (Button) e.getSource();
-			System.out.println(stisknuteTlacitko.getId());
 			if (stisknuteTlacitko.getId().equals(nahodneSlovo.getAnglicky())) {
 				hra.setSpravne(hra.getSpravne() + 1);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("Výsledek");
 				alert.setHeaderText("Správně");
-				alert.setContentText("Vybrali jste správný obrázek");
+				alert.setContentText(nahodneSlovo.getAnglicky()+" je "+nahodneSlovo.getCesky());
+				String cestaImg = nahodneSlovo.getImg();
+				Image img = new Image(cestaImg);
+				ImageView image = new ImageView(img);
+				alert.setGraphic(image);
 				alert.showAndWait();
 			} else {
 				hra.setSpatne(hra.getSpatne() + 1);
-				Alert alert = new Alert(AlertType.INFORMATION);
+				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Výsledek");
 				alert.setHeaderText("Špatně");
-				alert.setContentText("Vybrali jste špatný obrázek");
+				alert.setContentText(nahodneSlovo.getAnglicky()+" je něco jiného");
 				alert.showAndWait();
 			}
-			labelSkore.setText("Správně: "+hra.getSpravne().toString()+"\nŠpatně: "+hra.getSpatne().toString());
 			buttonHadejKlik();
 		}
 
 		else {
-			mainLabel.setText("Musíte začít hru stiskem na tlačítko hádej!");
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Chyba");
+			alert.setHeaderText("Musíte začít hru stiskem na tlačítko hádej!");
+			alert.showAndWait();
 		}
 		;
 
@@ -75,7 +80,7 @@ public class HomeController extends GridPane {
 	public void buttonHadejKlik() {
 		nahodneSlovo = hra.getNahodneSlovo();
 		mainLabel.setText(nahodneSlovo.toString());
-		System.out.println(nahodneSlovo + nahodneSlovo.getCesky() + nahodneSlovo.getImg());
+		labelSkore.setText("Skóre:\nSprávně: " + hra.getSpravne().toString() + "\nŠpatně: " + hra.getSpatne().toString());
 
 	}
 
@@ -139,6 +144,5 @@ public class HomeController extends GridPane {
 		button6.setGraphic(image);
 		button6.setId(slova.get(5).getAnglicky());
 		button6.setTooltip(ceskyNazev);
-
 	}
 }

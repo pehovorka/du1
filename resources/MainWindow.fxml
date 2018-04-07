@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.pehovorka.du1.ui.HomeController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.pehovorka.du1.ui.HomeController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -16,7 +17,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0">
+      <VBox>
          <children>
             <Button fx:id="button1" mnemonicParsing="false" onAction="#hadej">
                <graphic>
@@ -50,17 +51,34 @@
             </Button>
          </children>
       </VBox>
-      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+      <VBox alignment="BOTTOM_LEFT" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
          <children>
-            <Label fx:id="mainLabel" text="Label">
+            <Label fx:id="labelSkore">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin></Label>
+            <Label fx:id="mainLabel">
                <font>
                   <Font size="36.0" />
                </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
             </Label>
-            <Button fx:id="buttonHadej" mnemonicParsing="false" onAction="#buttonHadejKlik" text="Hádej" />
-            <Label text="Skóre:" />
-            <Label fx:id="labelSkore" text="Label" />
+            <Button fx:id="buttonHadej" alignment="CENTER" mnemonicParsing="false" onAction="#buttonHadejKlik" prefHeight="50.0" prefWidth="200.0" text="Hádej">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
+         <GridPane.margin>
+            <Insets bottom="50.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
       </VBox>
    </children>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
 </GridPane>

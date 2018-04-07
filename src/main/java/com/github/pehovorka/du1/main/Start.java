@@ -27,10 +27,6 @@ public final class Start extends Application {
 		primaryStage.setScene(new Scene(root));
 		primaryStage.show();
 		primaryStage.setTitle("Angličtina");
-		primaryStage.setMinWidth(1024);
-		primaryStage.setMinHeight(768);
-		primaryStage.setMaxWidth(1600);
-		primaryStage.setMaxHeight(1069);
 	}
 
 }
